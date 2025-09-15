@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot name="batmobile" xmlns:xacro = "http://www.ros.org/wiki/xacro">
+
+    <!-- contains material and inertial tags which can be used by other robots also -->
+    <xacro:include filename="common_properties.xacro"/>
+
+    <!-- contains description of robot's links and joints -->
+    <xacro:include filename="mobile_base.xacro"/>
+
+    <!-- contains gazebo tags for simulation in gazebo  -->
+    <xacro:include filename="mobile_base_gazebo.xacro"/>
+
+    <xacro:include filename="camera.xacro"/>
+
+</robot>
