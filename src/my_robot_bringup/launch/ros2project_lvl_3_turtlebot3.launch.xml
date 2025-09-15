@@ -1,0 +1,18 @@
+<launch>
+    <set_env name="TURTLEBOT3_MODEL" value="waffle" />
+
+    <include file="$(find-pkg-share turtlebot3_gazebo)/launch/empty_world.launch.py" />
+
+    <node pkg="rclcpp_components" exec="component_container_mt" name="turtle_container" />
+
+    <executable cmd="ros2 component load /turtle_container ros2project_lvl_3 
+                     turtlebot3_controller::TurtleBot3Controller -r __node:=turtlebot3_controller_1"
+                output="screen" />
+
+    <node pkg="lifecycle_py" exec="lifecycle_node_manager">
+        <param name="managed_node_name" value="turtlebot3_controller_1" />
+    </node>
+
+</launch>
+
+<!-- ros2 action send_goal /move_turtle my_robot_interfaces/action/MoveTurtle "{linear_vel_x: 1.7, angular_vel_z: 1.1, duration_sec: 5}" -->
