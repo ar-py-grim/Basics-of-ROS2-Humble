@@ -3,7 +3,6 @@
 from rclpy.node import Node
 import time
 
-
 class Node2(Node):
     def __init__(self):
         super().__init__("node2")
